@@ -1,11 +1,20 @@
+/* ================================
+   GENERAL PAGE STYLING
+================================ */
+
 body {
   font-family: Arial, sans-serif;
   background: #f4f7fb;
   margin: 0;
   padding: 20px;
+  box-sizing: border-box;
 }
 
-/* PASSWORD GATE */
+
+/* ================================
+   PASSWORD GATE
+================================ */
+
 .password-gate {
   min-height: calc(100vh - 40px);
   display: flex;
@@ -25,6 +34,7 @@ body {
   padding: 35px 30px;
   text-align: center;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
 }
 
 .password-box h2 {
@@ -49,6 +59,12 @@ body {
   font-size: 16px;
 }
 
+.password-box input:focus {
+  outline: none;
+  border-color: #0b2c5f;
+  box-shadow: 0 0 0 2px rgba(11, 44, 95, 0.1);
+}
+
 .password-box button {
   background: #0b2c5f;
   color: #ffffff;
@@ -64,38 +80,60 @@ body {
 }
 
 .password-error {
-  color: red;
+  color: #b00020;
   margin-top: 15px;
   font-weight: bold;
 }
 
-/* MAIN QUIZ CONTAINER */
+
+/* ================================
+   MAIN QUIZ CONTAINER
+================================ */
+
 .quiz-container {
   max-width: 950px;
   margin: auto;
-  background: white;
+  background: #ffffff;
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
 }
+
+
+/* ================================
+   QUIZ HEADER
+================================ */
 
 .quiz-header {
   text-align: center;
   margin-bottom: 20px;
 }
 
-h1 {
+.quiz-header h1 {
   color: #0b2c5f;
+  margin-bottom: 8px;
 }
 
 #course-title {
   font-weight: bold;
-  color: #555;
+  color: #555555;
+  font-size: 17px;
 }
 
+
+/* ================================
+   HIDDEN ELEMENTS
+================================ */
+
 .hidden {
-  display: none;
+  display: none !important;
 }
+
+
+/* ================================
+   START SCREEN
+================================ */
 
 .start-card {
   background: #f8fbff;
@@ -116,13 +154,18 @@ h1 {
   font-size: 16px;
 }
 
+
+/* ================================
+   PRIMARY BUTTON
+================================ */
+
 .primary-btn {
   display: block;
   margin: 25px auto 0 auto;
   padding: 12px 25px;
   font-size: 16px;
   background: #0b2c5f;
-  color: white;
+  color: #ffffff;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -131,6 +174,11 @@ h1 {
 .primary-btn:hover {
   background: #174a99;
 }
+
+
+/* ================================
+   TIMER AND PROGRESS
+================================ */
 
 .top-bar {
   display: flex;
@@ -171,6 +219,11 @@ h1 {
   transition: width 0.3s ease;
 }
 
+
+/* ================================
+   QUESTION NAVIGATION
+================================ */
+
 #question-nav {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(42px, 1fr));
@@ -188,30 +241,53 @@ h1 {
   border: none;
   border-radius: 6px;
   background: #d9d9d9;
-  color: #222;
+  color: #222222;
   cursor: pointer;
   font-size: 13px;
 }
 
+.nav-btn:hover {
+  background: #bfc8d4;
+}
+
 .nav-btn.current {
   background: #0b2c5f;
-  color: white;
+  color: #ffffff;
 }
 
 .nav-btn.answered {
   background: #198754;
-  color: white;
+  color: #ffffff;
 }
 
 .nav-btn.current.answered {
   background: #0b2c5f;
-  color: white;
+  color: #ffffff;
+}
+
+
+/* ================================
+   QUESTION AREA
+================================ */
+
+#quiz-box {
+  margin-top: 10px;
+}
+
+#question-number {
+  color: #0b2c5f;
+  margin-bottom: 10px;
 }
 
 #question-text {
   font-size: 18px;
   line-height: 1.6;
 }
+
+
+/* ================================
+   ANSWER OPTIONS
+================================ */
 
 .option {
   display: block;
@@ -220,6 +296,7 @@ h1 {
   padding: 12px;
   border-radius: 8px;
   cursor: pointer;
+  transition: background 0.2s ease;
 }
 
 .option:hover {
@@ -229,6 +306,11 @@ h1 {
 .option input {
   margin-right: 10px;
 }
+
+
+/* ================================
+   QUIZ CONTROL BUTTONS
+================================ */
 
 .buttons {
   display: flex;
@@ -241,7 +323,7 @@ button {
   padding: 10px 18px;
   border: none;
   background: #0b2c5f;
-  color: white;
+  color: #ffffff;
   border-radius: 8px;
   cursor: pointer;
   font-size: 15px;
@@ -250,6 +332,11 @@ button {
 button:hover {
   background: #174a99;
 }
+
+
+/* ================================
+   RESULTS
+================================ */
 
 .result-card {
   background: #f8fbff;
@@ -260,6 +347,11 @@ button:hover {
   line-height: 1.8;
 }
 
+
+/* ================================
+   ANSWER REVIEW
+================================ */
+
 .review-item {
   background: #f9f9f9;
   border-left: 5px solid #0b2c5f;
@@ -268,27 +360,50 @@ button:hover {
   border-radius: 8px;
 }
 
+.review-item h3 {
+  color: #0b2c5f;
+}
+
+.review-item ul {
+  padding-left: 25px;
+}
+
+.review-item li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
 .correct {
-  color: green;
+  color: #198754;
   font-weight: bold;
 }
 
 .wrong {
-  color: red;
+  color: #b00020;
   font-weight: bold;
 }
+
+
+/* ================================
+   FOOTER
+================================ */
 
 .quiz-footer {
   text-align: center;
   font-size: 13px;
-  color: #666;
+  color: #666666;
   margin-top: 30px;
   padding-top: 15px;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #dddddd;
 }
 
-/* MOBILE RESPONSIVENESS */
+
+/* ================================
+   MOBILE RESPONSIVENESS
+================================ */
+
 @media (max-width: 600px) {
+
   body {
     padding: 10px;
   }
@@ -310,10 +425,26 @@ button:hover {
     padding: 15px;
   }
 
+  .quiz-header h1 {
+    font-size: 26px;
+  }
+
+  #course-title {
+    font-size: 15px;
+  }
+
   .top-bar {
     flex-direction: column;
     align-items: stretch;
     text-align: center;
+  }
+
+  #timer {
+    width: auto;
+  }
+
+  #question-text {
+    font-size: 17px;
   }
 
   .buttons {
